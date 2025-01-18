@@ -16,17 +16,53 @@
     <?php
     include '../koneksi.php';
     $no = 1;
-    $sql = "SELECT*FROM pembayaran,siswa,spp,petugas,kelas WHERE pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas AND siswa.id_kelas=kelas.id_kelas ORDER BY id_pembayaran";
+    // $sql = "SELECT*FROM pembayaran,siswa,spp,petugas,kelas WHERE pembayaran.id_spp=spp.id_spp AND pembayaran.nisns=siswa.nisn AND siswa.id_kelas=kelas.id_kelas ORDER BY id_pembayaran";
+    // $sql = "SELECT DISTINCT 
+    //         siswa.nisn, 
+    //         siswa.nama, 
+    //         pembayaran.id_pembayaran, 
+    //         pembayaran.tgl_bayar,
+    //         spp.tahun, 
+    //         spp.nominal, 
+    //         kelas.nama_kelas
+    //     FROM pembayaran, siswa, spp, petugas, kelas
+    //     WHERE pembayaran.id_spp = spp.id_spp
+    //     AND pembayaran.nisns = siswa.nisn
+    //     AND siswa.id_kelas = kelas.id_kelas
+    //     ORDER BY id_pembayaran";
+
+    $sql = "SELECT 
+            siswa.nisn, 
+            siswa.nama, 
+            pembayaran.id_pembayaran, 
+            pembayaran.tgl_bayar, 
+            spp.tahun, 
+            spp.nominal, 
+            kelas.nama_kelas
+        FROM pembayaran, siswa, spp, petugas, kelas
+        WHERE pembayaran.id_spp = spp.id_spp
+        AND pembayaran.nisns = siswa.nisn
+        AND siswa.id_kelas = kelas.id_kelas
+        AND pembayaran.id_pembayaran = (
+            SELECT MAX(id_pembayaran) 
+            FROM pembayaran 
+            WHERE nisns = siswa.nisn
+        )
+        ORDER BY pembayaran.id_pembayaran";
+
+
+
     $query = mysqli_query($koneksi, $sql);
     foreach ($query as $data) { 
-        $data_pembayaran = mysqli_query($koneksi,"SELECT SUM(jumlah_bayar) as jumlah_bayar FROM pembayaran WHERE nisns='$data[nisns]'");
+        // var_dump($data);
+        $data_pembayaran = mysqli_query($koneksi,"SELECT SUM(jumlah_bayar) as jumlah_bayar FROM pembayaran WHERE nisns='$data[nisn]'");
         $data_pembayaran = mysqli_fetch_array($data_pembayaran);
         $sudah_bayar = $data_pembayaran['jumlah_bayar'];
         $kekurangan = $data['nominal']-$sudah_bayar;
         ?>
         <tr class="text-center">
             <td><?= $no++; ?></td>
-            <td><?= $data['nisns'] ?></td>
+            <td><?= $data['nisn'] ?></td>
             <td><?= $data['nama'] ?></td>
             <td><?= $data['nama_kelas'] ?></td>
             <td><?= $data['tahun'] ?></td>
@@ -38,11 +74,11 @@
                 if ($kekurangan==0) {
                     echo"<span class='badge text-bg-success'> Sudah Lunas </span>";
                 }else { ?>
-                    <a href="?url=tambah-pembayaran&nisns=<?= $data['nisns'] ?>&kekurangan=<?= $kekurangan?>" class="btn btn-danger"> Pilih & Bayar</a>
+                    <a href="?url=tambah-pembayaran&nisns=<?= $data['nisn'] ?>&kekurangan=<?= $kekurangan?>" class="btn btn-danger"> Pilih & Bayar</a>
                 <?php } ?>
             </td>
             <td>
-                <a href="?url=history-pembayaran&nisns=<?= $data['nisns']?>" class="btn btn-info">History</a>
+                <a href="?url=history-pembayaran&nisns=<?= $data['nisn']?>" class="btn btn-info">History</a>
             </td>
         </tr>
     <?php } ?>
