@@ -17,7 +17,7 @@
     <?php
     include '../koneksi.php';
     $no = 1;
-    $sql = "SELECT*FROM siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp ORDER By nama ASC";
+    $sql = "SELECT*FROM siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp ORDER By nama DESC";
     $query = mysqli_query($koneksi, $sql);
     foreach ($query as $data) { ?>
         <tr>
