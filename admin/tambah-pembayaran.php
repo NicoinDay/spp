@@ -2,7 +2,7 @@
 $nisns = $_GET['nisns'];
 $kekurangan = $_GET['kekurangan'];
 include '../koneksi.php';
-$sql = "SELECT*FROM pembayaran,siswa,spp,petugas,kelas WHERE pembayaran.id_siswa=siswa.id_siswa AND pembayaran.id_spp=spp.id_spp AND pembayaran.id_petugas=petugas.id_petugas AND siswa.id_kelas=kelas.id_kelas AND nisns='$nisns'";
+$sql = "SELECT*FROM pembayaran,siswa,spp,petugas,kelas WHERE  pembayaran.id_spp=spp.id_spp AND pembayaran.nisns=siswa.nisn AND siswa.id_kelas=kelas.id_kelas AND nisns='$nisns'";
 $query = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_array($query);
 ?>
