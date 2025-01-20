@@ -30,7 +30,7 @@
         LEFT JOIN spp ON siswa.id_spp = spp.id_spp
         LEFT JOIN pembayaran ON siswa.nisn = pembayaran.nisns
         GROUP BY siswa.nisn
-        ORDER BY siswa.nisn DESC";
+        ORDER BY siswa.nisn ASC";
 
         $query = mysqli_query($koneksi, $sql);
 
