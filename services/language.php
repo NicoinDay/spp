@@ -11,6 +11,7 @@ $translator->addLoader('array',new ArrayLoader());
 
 // translation to english
 $translator->addResource('array',[
+    
     // login petugas or admin
     'admin_username' => 'Enter Your Username',
     'admin_pass' => 'Enter Your Password',
