@@ -24,20 +24,24 @@ if ($_SESSION['level'] != 'admin') {
 </head>
 
 <body>
+
+
+
+
     <div class="container mt-5">
 
         <h3>Aplikasi Pembayaran SPP</h3>
         <div class="alert alert-info">
             Anda Login Sebagai <b>ADMINISTRATOR</b> Aplikasi Pembayaran SPP.
         </div>
-        <a href="admin.php" class="btn btn-primary"> Administrator</a>
+        <!-- <a href="admin.php" class="btn btn-primary"> Administrator</a>
         <a href="admin.php?url=spp" class="btn btn-primary"> SPP</a>
         <a href="admin.php?url=kelas" class="btn btn-primary"> Kelas</a>
         <a href="admin.php?url=siswa" class="btn btn-primary"> Siswa</a>
         <a href="admin.php?url=petugas" class="btn btn-primary"> Petugas</a>
         <a href="admin.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a>
         <a href="admin.php?url=laporan" class="btn btn-primary"> Laporan</a>
-        <a href="admin.php?url=logout" class="btn btn-primary"> Logout</a>
+        <a href="admin.php?url=logout" class="btn btn-primary"> Logout</a> -->
 
         <div class="card mt-2">
             <div class="card-body">

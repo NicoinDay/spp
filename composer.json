@@ -1,0 +1,17 @@
+{
+    "name": "zul/rahman-spp",
+    "autoload": {
+        "psr-4": {
+            "Zul\\RahmanSpp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zyprush18",
+            "email": "zyprush9@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/translation": "^7.2"
+    }
+}
