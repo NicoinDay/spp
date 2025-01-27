@@ -1,21 +1,21 @@
-<h5>Halaman Data Siswa</h5>
-<a href="?url=tambah-Siswa" class="btn btn-primary"> Tambah Siswa </a>
+<h5>Student Data Page</h5>
+<a href="?url=tambah-Siswa" class="btn btn-primary"> Add Student </a>
 <hr>
 <table class="table table-striped table-bordered">
     <tr class="fw-bold">
         <th>No</th>
         <th>NISN</th>
         <th>NIS</th>
-        <th>Nama</th>
-        <th>Kelas</th>
-        <th>Alamat</th>
-        <th>No Telepon</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Address</th>
+        <th>Phone Number</th>
         <th>SPP</th>
         <th>Edit</th>
-        <th>Hapus</th>
+        <th>Delete</th>
     </tr>
     <?php
-    include '../koneksi.php';
+    include'../koneksi.php';
     $no = 1;
     $sql = "SELECT*FROM siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND siswa.id_spp=spp.id_spp ORDER By nama DESC";
     $query = mysqli_query($koneksi, $sql);
@@ -33,7 +33,7 @@
                 <a href="?url=edit-siswa&id_siswa=<?= $data['id_siswa'] ?>" class="btn btn-warning">EDIT</a>
             </td>
             <td>
-                <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')" href="?url=hapus-siswa&nisn=<?= $data['nisn'] ?>" class="btn btn-danger">HAPUS</a>
+                <a onclick="return confirm('Are you sure want to delete the data')" href="?url=hapus-siswa&nisn=<?= $data['nisn'] ?>" class="btn btn-danger">DELETE</a>
             </td>
         </tr>
     <?php } ?>
