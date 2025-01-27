@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$db_name = 'spp_english';
+$db_name = 'db_spp';
 
 try {
 
