@@ -2,13 +2,13 @@
 session_start();
 if (empty($_SESSION['id_petugas'])) {
     echo "<script>
-    alert('Maaf Anda Belum Login');
+    alert('Sorry you are not logged in');
     window.location.assign('../index2.php');
     </script>";
 }
 if ($_SESSION['level'] != 'petugas') {
     echo "<script>
-    alert('Maaf Anda Bukan Sesi Admin');
+    alert('sorry you are not an admin session');
     window.location.assign('../index2.php');
     </script>";
 }
@@ -19,19 +19,19 @@ if ($_SESSION['level'] != 'petugas') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petugas - Aplikasi Pembayaran</title>
+    <title>Operator - SPP Payment Application</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container mt-5">
 
-        <h3>Aplikasi Pembayaran SPP</h3>
+        <h3>School Tuition Payment Application</h3>
         <div class="alert alert-info">
-            Anda Login Sebagai Petugas <b><?=$_SESSION['nama_petugas']?></b> Aplikasi Pembayaran SPP.
+        You are logged in as <b><?=$_SESSION['nama_petugas']?></b> of the SPP payment application
         </div>
-        <a href="petugas.php" class="btn btn-primary"> Petugas</a>
-        <a href="petugas.php?url=pembayaran" class="btn btn-primary"> Pembayaran</a>
+        <a href="petugas.php" class="btn btn-primary">Operator</a>
+        <a href="petugas.php?url=pembayaran" class="btn btn-primary">Paying</a>
         <a href="petugas.php?url=logout" class="btn btn-primary"> Logout</a>
 
         <div class="card mt-2">
@@ -40,8 +40,8 @@ if ($_SESSION['level'] != 'petugas') {
                 <?php
                 $file = @$_GET['url'];
                 if (empty($file)) {
-                    echo "<h4>Selamat Datang Di Halaman Petugas.</h4>";
-                    echo "Aplikasi Pembayaran SPP digunakan untuk mempermudah dalam mencatat pembayaran siswa / siswi disekolah.";
+                    echo "<h4>Welcome To the Operation Page.</h4>";
+                    echo "The SPP payment application is used to make it easier to record student payments at schools";
                 } else {
                     include $file . '.php';
                 }
