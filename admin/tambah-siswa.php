@@ -1,5 +1,5 @@
-<h5>Halaman Tambah Data Siswa</h5>
-<a href="?url=siswa" class="btn btn-primary"> KEMBALI </a>
+<h5>Add Student Data Page </h5>
+<a href="?url=siswa" class="btn btn-primary"> BACK </a>
 <hr>
 <form method="post" action="?url=proses-tambah-siswa">
     <div class="form-group mb-2">
@@ -11,13 +11,13 @@
         <input type="number" name="nis" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Nama Siswa</label>
+        <label>Student Name</label>
         <input type="text" name="nama" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Kelas</label>
+        <label>Class</label>
         <select name="id_kelas" class="form-control" required>
-            <option value=""> Pilih Kelas</option>
+            <option value=""> Select Class </option>
             <?php
             include '../koneksi.php';
             $kelas = mysqli_query($koneksi,"SELECT*FROM kelas ORDER BY nama_kelas ASC");
@@ -28,17 +28,17 @@
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>Alamat</label>
+        <label>Address</label>
         <textarea name="alamat" class="form-control" required></textarea>
     </div>
     <div class="form-group mb-2">
-        <label>No.Telpon</label>
+        <label>Phone Number</label>
         <input type="number" name="no_telp" class="form-control" required>
     </div>
     <div class="form-group mb-2">
         <label>SPP</label>
         <select name="id_spp" class="form-control" required>
-            <option value=""> Pilih SPP</option>
+            <option value=""> Select SPP</option>
             <?php
             include '../koneksi.php';
             $spp = mysqli_query($koneksi,"SELECT*FROM spp ORDER BY id_spp ASC");
@@ -50,7 +50,7 @@
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-success"> SIMPAN </button>
+        <button type="submit" class="btn btn-success"> SAVE </button>
         <button type="reset" class="btn btn-warning"> RESET </button>
     </div>
 </form>

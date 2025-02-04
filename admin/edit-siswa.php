@@ -5,8 +5,8 @@ $sql = "SELECT*FROM  siswa,spp,kelas WHERE siswa.id_kelas=kelas.id_kelas AND sis
 $query = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_array($query);
 ?>
-<h5>Halaman Tambah Data Siswa</h5>
-<a href="?url=siswa" class="btn btn-primary"> KEMBALI </a>
+<h5>Page Edit Student Data</h5>
+<a href="?url=siswa" class="btn btn-primary"> BACK </a>
 <hr>
 <form method="post" action="?url=proses-edit-siswa&id_siswa=<?= $id_siswa?>">
     <div class="form-group mb-2">
@@ -18,11 +18,11 @@ $data = mysqli_fetch_array($query);
         <input value="<?= $data['nis']?>" type="number" name="nis" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Nama Siswa</label>
+        <label>Student Name</label>
         <input value="<?= $data['nama']?>" type="text" name="nama" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Kelas</label>
+        <label>Class</label>
         <select name="id_kelas" class="form-control" required>
             <option value=" <?= $data['id_kelas']?>"><?= $data['nama_kelas']?></option>
             <?php
@@ -35,11 +35,11 @@ $data = mysqli_fetch_array($query);
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>Alamat</label>
+        <label>Address</label>
         <textarea name="alamat" class="form-control" required><?= $data['alamat']?></textarea>
     </div> 
     <div class="form-group mb-2">
-        <label>No.Telpon</label>
+        <label>Phone Number</label>
         <input value="<?= $data['no_telp']?>" type="number" name="no_telp" class="form-control" required>
     </div>
     <div class="form-group mb-2">
@@ -57,7 +57,7 @@ $data = mysqli_fetch_array($query);
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-success"> SIMPAN </button>
+        <button type="submit" class="btn btn-success"> SAVE </button>
         <button type="reset" class="btn btn-warning"> RESET </button>
     </div>
 </form>
