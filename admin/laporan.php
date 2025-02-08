@@ -1,17 +1,17 @@
-<h5>Laporan Pembayaran SPP</h5>
-<a href="cetak-laporan.php" class="btn btn-primary">Cetak Laporan</a>
+<h5>SPP payment report</h5></h5>
+<a href="cetak-laporan.php" class="btn btn-primary">Print report</a>
 <hr>
 <table class="table table-striped table-bordered">
     <tr class="fw-bold text-center">
         <th>No</th>
         <th>NISN</th>
-        <th>Nama</th>
-        <th>Kelas</th>
-        <th>Tahun SPP</th>
-        <th>Nominal Dibayar</th>
-        <th>Sudah Dibayar</th>
-        <th>Tanggal Dibayar</th>
-        <th>Petugas</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Year SPP</th>
+        <th>Nominal Paid</th>
+        <th>Already Paid</th>
+        <th>Date Payment</th>
+        <th>Officer</th>
     </tr>
     <?php
     include '../koneksi.php';

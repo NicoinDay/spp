@@ -1,16 +1,16 @@
-<h5>Halaman Data Pembayaran Siswa</h5>
+<h5>student payment data page</h5>
 <hr>
 <table class="table table-striped table-bordered">
     <thead>
         <tr class="fw-bold text-center">
             <th>No</th>
             <th>NISN</th>
-            <th>Nama</th>
-            <th>Kelas</th>
+            <th>Name</th>
+            <th>Class</th>
             <th>SPP</th>
             <th>Nominal</th>
-            <th>Sudah Dibayar</th>
-            <th>Kekurangan</th>
+            <th>Already paid</th>
+            <th>Lack</th>
             <th>Status</th>
             <th>History</th>
         </tr>
@@ -49,9 +49,9 @@
                 <td>Rp. <?= number_format($kekurangan, 2, ',', '.'); ?></td>
                 <td>
                     <?php if ($kekurangan == 0) { ?>
-                        <span class="badge text-bg-success">Sudah Lunas</span>
+                        <span class="badge text-bg-success">it's paid off</span>
                     <?php } else { ?>
-                        <a href="?url=tambah-pembayaran&nisns=<?= $data['nisn']; ?>&kekurangan=<?= $kekurangan; ?>" class="btn btn-danger">Pilih & Bayar</a>
+                        <a href="?url=tambah-pembayaran&nisns=<?= $data['nisn']; ?>&kekurangan=<?= $kekurangan; ?>" class="btn btn-danger">Choose & pay</a>
                     <?php } ?>
                 </td>
                 <td>
