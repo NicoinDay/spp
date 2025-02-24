@@ -1,19 +1,19 @@
 <?php
 $nisns = $_SESSION['nisn'];
 ?>
-<h5>History Pembayaran</h5>
+<h5>Payment History</h5>
 <hr>
 <table class="table table-striped table-bordered">
     <tr class="fw-bold text-center">
         <th>No</th>
         <th>NISN</th>
-        <th>Nama</th>
-        <th>Kelas</th>  
-        <th>Tahun SPP</th>
-        <th>Nominal Dibayar</th>
-        <th>Sudah Dibayar</th>
-        <th>Tanggal Dibayar</th>
-        <th>Petugas</th>
+        <th>Name</th>
+        <th>Class</th>  
+        <th>Year SPP</th>
+        <th>Nominal paidr</th>
+        <th>Already paid</th>
+        <th>Date Paid</th>
+        <th>Officer</th>
     </tr>
     <?php
     include '../koneksi.php';

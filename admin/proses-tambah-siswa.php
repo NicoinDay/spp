@@ -20,5 +20,5 @@ $query_pembayaran = mysqli_query($koneksi, $sql_pembayaran);
 if ($query_siswa || $query_pembayaran) {
     header("Location:?url=siswa");
 } else {
-    echo "<script>alert('Maaf Data Tidak Tersimpan'); window.location.assign('?url=siswa');</script>";
+    echo "<script>alert('Sorry data not saved'); window.location.assign('?url=siswa');</script>";
 }

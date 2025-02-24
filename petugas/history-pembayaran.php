@@ -1,20 +1,20 @@
 <?php
 $nisns = $_GET['nisns'];
 ?>
-<h5>History Pembayaran</h5>
+<h5>Payment history</h5>
 <hr>
 <table class="table table-striped table-bordered">
     <tr class="fw-bold text-center">
         <th>No</th>
         <th>NISN</th>
-        <th>Nama</th>
-        <th>Kelas</th>  
-        <th>Tahun SPP</th>
-        <th>Nominal Dibayar</th>
-        <th>Sudah Dibayar</th>
-        <th>Tanggal Dibayar</th>
-        <th>Petugas</th>
-        <th>Hapus</th>
+        <th>Name</th>
+        <th>Class</th>  
+        <th>Year SPP</th>
+        <th>Nominal paid</th>
+        <th>alreday paid</th>
+        <th>already payment</th>
+        <th>office</th></th>
+        <th>delete</th>
     </tr>
     <?php
     include '../koneksi.php';
@@ -34,7 +34,7 @@ $nisns = $_GET['nisns'];
             <td><?= $data['tgl_bayar'] ?></td>
             <td><?= $data['nama_petugas'] ?></td>
             <td>
-                <a href="?url=hapus-pembayaran&nisns=<?= $data['nisns'] ?>&id_pembayaran=<?= $data['id_pembayaran']?>" class="btn btn-danger">Hapus</a>
+                <a href="?url=hapus-pembayaran&nisns=<?= $data['nisns'] ?>&id_pembayaran=<?= $data['id_pembayaran']?>" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     <?php } ?>

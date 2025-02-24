@@ -12,5 +12,5 @@ $query = mysqli_query($koneksi, $sql);
 if ($query) {
     header("Location:?url=petugas");
 } else {
-    echo "<script>alert('Maaf Data Tidak Tersimpan'); window.location.assign('?url=petugas');</script>";
+    echo "<script>alert('Sorry data not saved'); window.location.assign('?url=petugas');</script>";
 }

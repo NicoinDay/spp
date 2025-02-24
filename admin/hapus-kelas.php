@@ -8,5 +8,5 @@ $query = mysqli_query($koneksi, $sql);
 if ($query) {
     header("Location:?url=kelas");
 } else {
-    echo "<script>alert('Maaf Data Tidak Terhapus'); window.location.assign('?url=kelas');</script>";
+    echo "<script>alert('Sorry, data not deleted'); window.location.assign('?url=kelas');</script>";
 }

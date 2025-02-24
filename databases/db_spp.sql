@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Struktur dari tabel `kelas`
 --
 
-CREATE DATABASE IF NOT EXISTS `db_spp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `spp_english` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 CREATE TABLE `kelas` (
   `id_kelas` int(11) NOT NULL,

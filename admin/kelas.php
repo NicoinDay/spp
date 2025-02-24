@@ -1,13 +1,13 @@
-<h5>Halaman Data Kelas</h5>
-<a href="?url=tambah-kelas" class="btn btn-primary"> Tambah Kelas </a>
+<h5>Class Data Page</h5>
+<a href="?url=tambah-kelas" class="btn btn-primary"> Add Class </a>
 <hr>
 <table class="table table-striped table-bordered">
     <tr class="fw-bold">
         <th>No</th>
-        <th>Nama Kelas</th>
-        <th>Kompetensi Keahlian</th>
+        <th>Class Name</th>
+        <th>Expertise Competency</th>
         <th>Edit</th>
-        <th>Hapus</th>
+        <th>Delete</th>
     </tr>
     <?php
     include '../koneksi.php';
@@ -23,7 +23,7 @@
                 <a href="?url=edit-kelas&id_kelas=<?= $data['id_kelas'] ?>" class="btn btn-warning">EDIT</a>
             </td>
             <td>
-                <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')" href="?url=hapus-kelas&id_kelas=<?= $data['id_kelas'] ?>" class="btn btn-danger">HAPUS</a>
+                <a onclick="return confirm('Are you sure you want to delete data?')" href="?url=hapus-kelas&id_kelas=<?= $data['id_kelas'] ?>" class="btn btn-danger">DELETE</a>
             </td>
         </tr>
     <?php } ?>

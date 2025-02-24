@@ -10,5 +10,5 @@ $query = mysqli_query($koneksi, $sql);
 if ($query) {
     header("Location:?url=spp");
 } else {
-    echo "<script>alert('Maaf Data Tidak Tersimpan'); window.location.assign('?url=spp');</script>";
+    echo "<script>alert('Sorry data not saved'); window.location.assign('?url=spp');</script>";
 }

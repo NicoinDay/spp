@@ -6,13 +6,13 @@ $sql = "SELECT*FROM pembayaran,siswa,spp,petugas,kelas WHERE  pembayaran.id_spp=
 $query = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_array($query);
 ?>
-<h5>Halaman Pembyaran SPP</h5>
-<a href="?url=pembayaran" class="btn btn-primary"> KEMBALI </a>
+<h5>Spp Payment Page</h5>
+<a href="?url=pembayaran" class="btn btn-primary"> BACK </a>
 <hr>
 <form method="post" action="?url=proses-tambah-pembayaran&nisns=<?= $nisns; ?>">
     <div class="form-group mb-2">
         <input name="id_spp" value="<?= $data['id_spp'] ?>" type="hidden" class="form-control" required>
-        <label>Nama Petugas</label>
+        <label>Officer's name</label>
         <input value="<?= $_SESSION['nama_petugas'] ?>" disabled class="form-control" required>
     </div>
     <div class="form-group mb-2">
@@ -20,35 +20,35 @@ $data = mysqli_fetch_array($query);
         <input readonly name="nisns" value="<?= $data['nisns'] ?>" type="number" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Nama Siswa</label>
+        <label>Student Name</label>
         <input disabled value="<?= $data['nama'] ?>" type="text" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label>Tanggal Bayar</label>
+        <label>Paymet Date</label>
         <input type="date" name="tgl_bayar" class="form-control" required>
     </div>
     <div class="form-group mb-2">
-        <label for="">Bulan Dibayar</label>
+        <label for="">Pay Month</label>
         <select name="bulan_bayar" class="form-control" required>
-            <option value="">--Pilih Bulan Dibayar--</option>
-            <option value="Januari">Januari</option>
-            <option value="Februari">Februari</option>
-            <option value="Maret">Maret</option>
+            <option value="">--Select the month to pay--</option>
+            <option value="Januari">January</option>
+            <option value="Februari">February</option>
+            <option value="Maret">March</option>
             <option value="April">April</option>
-            <option value="Mei">Mei</option>
-            <option value="Juni">Juni</option>
-            <option value="Juli">Juli</option>
-            <option value="Agustus">Agustus</option>
+            <option value="Mei">May</option>
+            <option value="Juni">June</option>
+            <option value="Juli">July</option>
+            <option value="Agustus">Agust</option>
             <option value="September">September</option>
-            <option value="Oktober">Oktober</option>
+            <option value="Oktober">October</option>
             <option value="November">November</option>
-            <option value="Desember">Desember</option>
+            <option value="Desember">December</option>
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>Tahun Bayar</label>
+        <label>payment year</label>
         <select name="tahun_bayar" class="form-control" required>
-            <option value="">--Pilih Tahun Dibayar--</option>
+            <option value="">--Select the year paid--</option>
             <?php
             for ($i = 2020; $i <= date('Y'); $i++) {
                 echo "<option value='$i'>$i</option>";
@@ -57,11 +57,11 @@ $data = mysqli_fetch_array($query);
         </select>
     </div>
     <div class="form-group mb-2">
-        <label>Jumlah Bayar (Jumlah yang harus di bayar adalah <b><?= number_format($kekurangan, 2, ',', '.') ?></b>)</label><br>
+        <label>payment amont (the amount to be paid is <b><?= number_format($kekurangan, 2, ',', '.') ?></b>)</label><br>
         <input type="number" name="jumlah_bayar" class="form-control" max="<?= $kekurangan ?>" required>
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-success"> SIMPAN </button>
+        <button type="submit" class="btn btn-success"> SAVE </button>
         <button type="reset" class="btn btn-warning"> RESET </button>
     </div>
 </form>

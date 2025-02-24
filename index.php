@@ -12,7 +12,7 @@
     <div class="container mt-5">
         <div class="row justify-content-md-center">
             <div class="col-md-4">
-                <h4 class="text-center">LOGIN SISWA</h4>
+                <h4 class="text-center">STUDENT LOGIN</h4>
                 <div class="card">
                     <div class="card-header">
                         <img src="logo-spp.png" width="100%">
@@ -21,16 +21,16 @@
                         <form action="proses-login-siswa.php" method="post">
                             <div class="form-group mb-2">
                                 <label>NISN</label>
-                                <input type="number" name="nisn" class="form-control" placeholder="Masukan NISN anda.." required>
+                                <input type="number" name="nisn" class="form-control" placeholder="Enter your NISN.." required>
                             </div>
                             <div class="form-group mb-2">
                                 <label>NIS</label>
-                                <input type="number" name="nis" class="form-control" placeholder="Masukan NIS anda.." required>
+                                <input type="number" name="nis" class="form-control" placeholder="Enter your NIS.." required>
                             </div>
                             <div class="form-group mb-2">
                                 <button type="submit" class="btn btn-primary"> LOGIN </button>
                             </div>
-                            <a href="index2.php"> Login Sebagai Administrator / Petugas </a>
+                            <a href="index2.php"> Login As Administrator / Officer </a>
                         </form>
                     </div>
                 </div>
